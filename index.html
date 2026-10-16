@@ -5,17 +5,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="面向首次操作的 XR 头环 App Mac 安装指引：解压、USB 调试、双击安装、macOS 隐私与安全性放行及初始化。">
   <meta name="theme-color" content="#f7f8f5">
-  <title>Mac 安装头环 App · 图文操作指引</title>
+  <title>头环 App 安装图文指引 · Windows / Mac</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d302c'/%3E%3Ctext x='32' y='41' text-anchor='middle' fill='white' font-size='28' font-family='monospace'%3EXR%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=1.2">
+  <link rel="stylesheet" href="style.css?v=2.0">
 </head>
 <body>
-  <a class="skip" href="#prepare">跳到安装步骤</a>
-  <header class="topbar">
+<a class="skip" id="skip-guide" href="#prepare">跳到安装步骤</a>
+<header class="topbar">
     <a class="brand" href="#top" aria-label="回到页首"><span class="brand-mark">XR</span><span>头环使用指引</span></a>
-    <span class="edition">Mac 版 <span class="dot"></span> 2026.10.16</span>
+    <span class="edition"><span id="platform-label">Mac 版</span> <span class="dot"></span> 2026.10.16</span>
   </header>
-  <main id="top">
+<div class="platform-tabs"><div class="platform-tabs-inner"><span class="platform-prompt">选择电脑系统</span><div class="platform-tablist" role="tablist" aria-label="安装教程平台"><button id="tab-windows" type="button" role="tab" aria-controls="guide-windows" aria-selected="false" tabindex="-1">Windows</button><button id="tab-mac" type="button" role="tab" aria-controls="guide-mac" aria-selected="true">Mac</button></div></div></div>
+<main id="top">
+<div id="guide-mac" class="guide-panel" role="tabpanel" aria-labelledby="tab-mac">
     <section class="hero" aria-labelledby="page-title">
       <p class="eyebrow">安装操作 / MAC</p>
       <h1 id="page-title">用 Mac，<br>给头环安装 App。</h1>
@@ -83,14 +85,20 @@
         <section class="step" id="install" aria-labelledby="install-title">
           <div class="step-heading"><span class="step-number">05</span><div><p class="step-kicker">终端操作</p><h2 id="install-title">输入编号，再按提示确认</h2></div></div>
           <p>终端会显示可用设备。<strong>每次输入后，都按一下键盘上的回车键（Enter / Return）。</strong></p>
-          <p class="muted">下面 4 张终端图按实际脚本提示制作，均为<strong>模拟示例，不是实机安装截图</strong>。点击图片可看大图。</p><div class="terminal-walkthrough"><h3>1. 选择目标头环</h3><p>输入目标头环前面的编号，然后按回车。只有一台时通常输入 <kbd>1</kbd>；图中的 DEMO-XR-001 是示例序列号。</p><figure class="figure"><a href="assets/mac-terminal-01-device.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/mac-terminal-01-device.png" width="980" height="451" alt="Mac 终端操作示意：在输入目标头环编号处输入 1 并按回车。"></a><figcaption>图 4 · 选择设备的终端操作示意。红框内是需要输入的位置。点击可看大图。</figcaption></figure><h3>2. 确认设备，再确认安装</h3><p>核对序列号、厂家和型号，输入 <kbd>Y</kbd> 并回车；出现覆盖安装确认时，再输入 <kbd>Y</kbd> 并回车。</p><figure class="figure"><a href="assets/mac-terminal-02-install.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/mac-terminal-02-install.png" width="980" height="600" alt="Mac 终端操作示意：确认使用这台头环时输入 Y，确认覆盖安装 APK 时再次输入 Y。"></a><figcaption>图 5 · 两次确认示意：先确认头环，再确认安装。点击可看大图。</figcaption></figure><h3>3. 首次设置设备所有者</h3><p>如果出现这条询问，确认是本项目管理的头环后输入 <kbd>Y</kbd> 并回车。已设置过的设备会跳过。</p><figure class="figure"><a href="assets/mac-terminal-03-owner.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/mac-terminal-03-owner.png" width="980" height="452" alt="Mac 终端操作示意：将 XR App 设置为设备所有者时输入 Y；已设置过的设备自动跳过。"></a><figcaption>图 6 · 首次设置设备所有者的终端操作示意。点击可看大图。</figcaption></figure></div>
+          <p class="muted">下面 4 张是本次 Mac 实际安装的终端截图。这台头环已经设置过设备所有者，因此本次为<strong>覆盖安装</strong>。截图较宽，手机可点击图片放大查看。</p>
+          <div class="terminal-walkthrough">
+          <h3>1. 选择目标头环</h3><p>看到“输入目标头环编号”时，输入列表中目标头环前面的编号，再按回车。图中只有一台，所以输入 <kbd>1</kbd>。</p><figure class="figure"><a class="annotated-shot" href="assets/mac-real-01-device.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/mac-real-01-device.png" width="1714" height="574" alt="Mac 实际安装截图：工具识别到一台 SXR_1 头环，在输入目标头环编号处输入 1。"><span class="shot-highlight" style="left:0.45%;top:92.3%;width:18.4%;height:6.5%" aria-hidden="true" title="输入设备编号"></span></a><figcaption>图 4 · 在红框处输入设备编号，再按回车。点击图片可看原图，手机可放大查看。</figcaption></figure>
+          <h3>2. 确认是这台头环</h3><p>核对序列号、厂家和型号；在“确认使用这台头环？”后输入 <kbd>Y</kbd>，按回车。</p><figure class="figure"><a class="annotated-shot" href="assets/mac-real-02-confirm-device.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/mac-real-02-confirm-device.png" width="1730" height="152" alt="Mac 实际安装截图：核对厂家 SXR、型号 SXR_1 后，确认使用这台头环时输入 Y。"><span class="shot-highlight" style="left:0.45%;top:74.7%;width:23.3%;height:23%" aria-hidden="true" title="输入 Y 确认设备"></span></a><figcaption>图 5 · 核对设备，在红框处输入 Y，再按回车。点击图片可看原图，手机可放大查看。</figcaption></figure>
+          <h3>3. 确认覆盖安装</h3><p>工具会先检查设备所有者。核对显示的版本 <strong>1.1.0 (262891027)</strong> 和目标设备后，在“确认覆盖安装此 APK？”处输入 <kbd>Y</kbd>，按回车。</p><figure class="figure"><a class="annotated-shot" href="assets/mac-real-03-confirm-install.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/mac-real-03-confirm-install.png" width="1714" height="194" alt="Mac 实际安装截图：设备所有者已是 XR App，安装版本为 1.1.0 构建号 262891027，确认覆盖安装时输入 Y。"><span class="shot-highlight" style="left:0.45%;top:84.5%;width:26.7%;height:15%" aria-hidden="true" title="输入 Y 确认安装"></span></a><figcaption>图 6 · 在红框处输入 Y，确认覆盖安装。点击图片可看原图，手机可放大查看。</figcaption></figure>
+          <h3>4. 首次设备：按提示设置设备所有者</h3><p>如果新头环出现“将 XR App 设置为设备所有者？ [Y/N]”，确认属于本项目管理后输入 <kbd>Y</kbd>，按回车。<strong>本次截图中的头环已设置过，因此没有这一询问，直接进入安装完成。</strong></p>
+          </div>
           <p class="tip">“设备所有者”是本项目设备管理所需的初始化设置。第一次通常需要确认；后续同签名覆盖升级会保留这一身份。</p>
         </section>
 
         <section class="step" id="finish" aria-labelledby="finish-title">
           <div class="step-heading"><span class="step-number">06</span><div><p class="step-kicker">完成检查</p><h2 id="finish-title">看到成功提示，再看一眼头环</h2></div></div>
           <div class="success-panel"><span class="success-icon" aria-hidden="true">✓</span><div><p>终端应出现</p><code>XR INIT SUCCESS</code><span>APK 安装和设备所有者核验完成，启动命令已发送。</span></div></div>
-          <figure class="figure"><a href="assets/mac-terminal-04-success.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/mac-terminal-04-success.png" width="980" height="545" alt="Mac 终端完成提示示意：XR INIT SUCCESS，检查头环应用启动后按回车关闭窗口。"></a><figcaption>图 7 · 安装完成后的终端提示示意。以 XR INIT SUCCESS 为完成标志，再检查实际头环画面；点击可看大图。</figcaption></figure>
+          <figure class="figure"><a class="annotated-shot" href="assets/mac-real-04-success.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/mac-real-04-success.png" width="1710" height="242" alt="Mac 实际安装完成截图：出现 XR INIT SUCCESS，安装和设备所有者核验完成，启动命令已发送，按回车关闭窗口。"><span class="shot-highlight" style="left:0.5%;top:5.8%;width:16.8%;height:13.8%" aria-hidden="true" title="安装成功提示"></span></a><figcaption>图 7 · 红框中的 XR INIT SUCCESS 表示本次安装与设备所有者核验完成。点击图片可看原图，手机可放大查看。</figcaption></figure>
           <ol class="actions"><li>看一下头环画面，确认 <strong>XR 采集 App 已打开</strong>。</li><li>回到 Mac，按回车结束安装窗口。</li><li>随后按项目要求进行配网、绑定、登录、录制与上传验证。</li></ol>
           <p class="tip">USB 安装本身不需要联网。后续业务使用还需要配套手机控制 App、正式账号和可访问服务器的 Wi-Fi。</p>
         </section>
@@ -103,9 +111,143 @@
           <details><summary>提示签名不兼容、版本更高或已有其他设备所有者？</summary><p>停止操作，将错误信息交给负责人。本工具遇到这些情况会停止，不会自动卸载旧应用或强制降级。</p></details>
           <details><summary>头环没有“开发者选项”或设置设备所有者失败？</summary><p>不同固件的开放方式可能不同，请联系设备负责人；首次设置设备所有者还会受到系统账户、工作资料和固件策略限制。不要自行恢复出厂。</p></details>
         </section>
-        <footer class="footer"><p>适用：XR-Installer-Mac-1.1.0-prod-20261016-170742 · App 1.1.0 / 262891027</p><p>安全设置步骤与图 2、图 3 来源：<a href="https://support.apple.com/zh-cn/102445" target="_blank" rel="noopener">Apple 官方：在 Mac 上安全地打开 App</a>。不同 macOS 版本的布局、按钮及文字可能略有不同。</p><details class="document-info"><summary>文档信息与验证范围</summary><p>文档：XR 头环 App Mac 安装图文指引 · 编号 XR-MAC-GUIDE-001 · 版本 1.2 · 日期 2026-10-16。编制：AI 辅助；人工评审与批准：待确认。依据：当前安装脚本、安装包版本信息、用户提供的 Finder 截图、Windows 原教程中的接线照片及 Apple 官方帮助。</p><p>Mac 安装工具已完成本机预检与 29 项模拟检查；未执行真实头环安装、业务功能验收或在本机复现安全拦截。接线照片来自用户提供的 Windows 教程；图 1 为用户提供的实际文件截图，图 2、3 为 Apple 官方界面示例，终端图为按实际脚本提示制作的模拟示例，不是实机安装截图。</p><p>本页提供操作说明；安装工具 ZIP 请向负责人获取。</p></details><a class="back-top" href="#top">回到顶部 ↑</a></footer>
+        <footer class="footer"><p>适用：XR-Installer-Mac-1.1.0-prod-20261016-170742 · App 1.1.0 / 262891027</p><p>安全设置步骤与图 2、图 3 来源：<a href="https://support.apple.com/zh-cn/102445" target="_blank" rel="noopener">Apple 官方：在 Mac 上安全地打开 App</a>。不同 macOS 版本的布局、按钮及文字可能略有不同。</p><details class="document-info"><summary>文档信息与验证范围</summary><p>文档：XR 头环 App Mac 安装图文指引 · 编号 XR-MAC-GUIDE-001 · 版本 1.4 · 日期 2026-10-16。编制：AI 辅助；人工评审与批准：待确认。依据：当前安装脚本、安装包版本信息、用户提供的 Finder 截图、Windows 原教程中的接线照片及 Apple 官方帮助。</p><p>Mac 安装工具已完成本机预检与 29 项模拟检查；用户已完成一次实际头环覆盖安装，日志与 ADB 核验确认版本为 1.1.0 / 262891027、XR App 已是设备所有者，应用进程与前台 Activity 在运行。首次给新设备设置设备所有者、头环画面效果、登录、录制和上传仍待验证；本机未复现系统安全拦截。接线照片来自用户提供的 Windows 教程；图 1 为用户提供的实际文件截图，图 2、3 为 Apple 官方界面示例，图 4—7 为用户本次提供的真实 Mac 安装截图。</p><p>本页提供操作说明；安装工具 ZIP 请向负责人获取。</p></details><a class="back-top" href="#top">回到顶部 ↑</a></footer>
       </div>
     </div>
-  </main>
-</body>
-</html>
+  </div>
+<div id="guide-windows" class="guide-panel" role="tabpanel" aria-labelledby="tab-windows" hidden>
+    <section class="hero" id="win-top" aria-labelledby="win-page-title">
+      <p class="eyebrow">安装操作 / WINDOWS</p>
+      <h1 id="win-page-title">用 Windows，<br>给头环安装 App。</h1>
+      <p class="intro">第一次操作也可以跟着做。准备好头环和数据线，<br class="desktop-only">按下面 6 步完成安装与初始化。</p>
+      <div class="hero-actions"><a class="button primary" href="#win-prepare">从第一步开始 <span aria-hidden="true">↓</span></a></div>
+      <div class="version-strip"><span>App <strong>1.1.0</strong></span><span>构建号 <strong>262891027</strong></span><span>APK 日期 <strong>2026-10-16</strong></span></div>
+      <div class="hero-note"><span class="small-icon" aria-hidden="true">i</span><p>双击 <strong>xr-init-device-owner.bat</strong>，即可开始安装和 init 初始化。</p></div>
+    </section>
+    <div class="guide-layout">
+      <aside class="contents" aria-label="步骤导航"><p class="nav-label">跟着这 6 步操作</p><nav><a href="#win-prepare"><span>01</span>准备与解压</a><a href="#win-connect"><span>02</span>连接头环</a><a href="#win-open"><span>03</span>双击 init 文件</a><a href="#win-device"><span>04</span>选择并确认设备</a><a href="#win-install"><span>05</span>选择 APK 并安装</a><a href="#win-finish"><span>06</span>确认完成</a></nav><a class="faq-link" href="#win-faq">遇到问题？<span aria-hidden="true">↗</span></a></aside>
+      <div class="steps">
+        <section class="step" id="win-prepare" aria-labelledby="win-prepare-title">
+          <div class="step-heading"><span class="step-number">01</span><div><p class="step-kicker">开始前</p><h2 id="win-prepare-title">下载 Windows 包，完整解压</h2></div></div>
+          <p>向负责人取得 <strong>Windows 版工具 ZIP</strong>，下载到电脑。右键压缩包，选择<strong>全部解压缩</strong>或解压软件中的“解压到”，再打开解压后的文件夹。</p>
+          <div class="file-label"><span class="file-badge">ZIP</span><code>XR-Installer-Windows-1.1.0-prod-20261015.zip</code></div>
+          <p class="muted">文件夹名仍含 20261015；本次对应的 APK 是 20261016 新包。请以第 5 步的 APK 文件名为准。</p>
+          <div class="prep-list"><div><span class="checkmark">✓</span><p>Windows 10 / 11 电脑<br><small>64 位系统，包内已有 ADB</small></p></div><div><span class="checkmark">✓</span><p>已开机的头环<br><small>建议先保证电量充足</small></p></div><div><span class="checkmark">✓</span><p>可传输数据的 USB 线<br><small>仅充电的线无法安装</small></p></div></div>
+          <p class="tip">完整解压后再运行，不要在压缩软件的预览窗口里直接双击脚本。保留文件夹内全部文件，建议放在 <code>C:\XR-Install</code> 等简单路径中，路径不要包含感叹号 <code>!</code>。</p>
+        </section>
+
+        <section class="step" id="win-connect" aria-labelledby="win-connect-title">
+          <div class="step-heading"><span class="step-number">02</span><div><p class="step-kicker">连接设备</p><h2 id="win-connect-title">连接头环侧面的 USB 接口</h2></div></div>
+          <ol class="actions"><li>头环开机，开启<strong>开发者选项 → USB 调试</strong>。找不到入口时联系设备负责人。</li><li>按下面实拍，将 USB 线插入头环侧面接口，另一端接电脑。<strong>一次只连接一台待安装头环。</strong></li><li>如果头环出现“允许 USB 调试”，选择<strong>允许 / 确定</strong>。</li></ol>
+          <div class="photo-pair"><figure class="figure"><a href="assets/headset-usb-port.jpeg" target="_blank" rel="noopener"><img loading="lazy" src="assets/headset-usb-port.jpeg" width="1279" height="1706" alt="头环侧面实拍，蓝色指示灯下方为 USB 接口。"></a><figcaption>接线实拍 A · 找到头环侧面的 USB 接口。</figcaption></figure><figure class="figure"><a href="assets/headset-usb-connected.jpeg" target="_blank" rel="noopener"><img loading="lazy" src="assets/headset-usb-connected.jpeg" width="652" height="870" alt="USB 数据线插入头环侧面接口后的实拍。"></a><figcaption>接线实拍 B · 插入数据线，另一端接电脑。点击图片可看原图。</figcaption></figure></div>
+          <p class="tip">USB 授权有时在启动安装工具后才出现。若工具找不到设备，先查看头环画面并同意授权，再重新运行。</p>
+        </section>
+
+        <section class="step" id="win-open" aria-labelledby="win-open-title">
+          <div class="step-heading"><span class="step-number">03</span><div><p class="step-kicker">打开工具</p><h2 id="win-open-title">双击红框里的 init 文件</h2></div></div>
+          <div class="entry-name"><code>xr-init-device-owner.bat</code><span>Windows 安装入口</span></div>
+          <p>继续打开文件夹，直到看到下图这样的一整列文件。双击红框中的 <strong>xr-init-device-owner.bat</strong>，会出现黑色命令窗口。</p>
+          <figure class="figure windows-entry"><a href="assets/windows-init-entry.png" target="_blank" rel="noopener"><img src="assets/windows-init-entry.png" width="851" height="808" alt="Windows 文件夹截图，红框圈出 xr-init-device-owner.bat，位于 APK 文件下面。"></a><figcaption>图 1 · Windows 文件夹示例：双击红框中的 xr-init-device-owner.bat。点击可看大图。</figcaption></figure>
+          <p class="tip">这个 init 脚本会继续执行 APK 安装和设备所有者检查，不用额外打开 <code>adb.exe</code> 或 APK。</p>
+        </section>
+
+        <section class="step" id="win-device" aria-labelledby="win-device-title">
+          <div class="step-heading"><span class="step-number">04</span><div><p class="step-kicker">先选对设备</p><h2 id="win-device-title">输入设备编号，再输入 Y</h2></div></div>
+          <p>命令窗口会依次出现下面的提示。<strong>每输入一次，都要按一下回车键（Enter）。</strong></p>
+          <div class="terminal-walkthrough"><h3>1. 输入目标头环编号</h3><p>看到 <code>Enter XR device number</code> 时，输入目标头环前面的编号，再按回车。图中只有一台，所以输入 <kbd>1</kbd>。</p><figure class="figure windows-terminal"><a href="assets/windows-real-01-device.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/windows-real-01-device.png" width="360" height="403" alt="Windows 实际截图：在红框中的 Enter XR device number 后输入 1。"></a><figcaption>图 2 · 在红框处输入设备编号，再按回车。点击图片可看原图。</figcaption></figure>
+          <h3>2. 确认目标设备</h3><p>看到 <code>Use this device?</code> 时，核对设备信息，输入 <kbd>Y</kbd>，再按回车。</p><figure class="figure windows-terminal"><a href="assets/windows-real-02-confirm-device.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/windows-real-02-confirm-device.png" width="460" height="574" alt="Windows 实际截图：确认设备信息，在红框中的 Use this device 后输入 y。"></a><figcaption>图 3 · 在红框处输入 Y，确认设备。点击图片可看原图。</figcaption></figure></div>
+          <p class="tip">如果显示多台设备，要按目标头环实际编号选择，不要直接照抄示例中的 1。大小写 <code>y</code> / <code>Y</code> 均可。</p>
+        </section>
+
+        <section class="step" id="win-install" aria-labelledby="win-install-title">
+          <div class="step-heading"><span class="step-number">05</span><div><p class="step-kicker">选择安装文件</p><h2 id="win-install-title">选择 APK，再确认安装</h2></div></div>
+          <p>工具接下来会列出 APK。核对本次文件名是：</p>
+          <div class="file-label"><span class="file-badge">APK</span><code>xr-20261016-170742-1.1.0-release.apk</code></div>
+          <div class="terminal-walkthrough"><h3>1. 选择本次 APK</h3><p>看到 <code>Enter APK number or M</code> 时，输入目标 APK 前面的编号。只有本次文件时，通常输入 <kbd>1</kbd>，再按回车。</p><figure class="figure windows-terminal"><a href="assets/windows-real-03-select-apk.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/windows-real-03-select-apk.png" width="723" height="488" alt="Windows 实际截图：列表中的 APK 已选定，在红框中的 Enter APK number or M 后输入 1。"></a><figcaption>图 4 · 在红框处输入 APK 编号，再按回车。点击图片可看原图。</figcaption></figure>
+          <h3>2. 确认安装</h3><p>看到 <code>Install this APK to this device?</code> 时，核对设备和 APK 文件名，输入 <kbd>Y</kbd>，再按回车，等待安装。</p><figure class="figure windows-terminal"><a href="assets/windows-real-04-confirm-install.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/windows-real-04-confirm-install.png" width="814" height="438" alt="Windows 实际截图：核对设备与 APK，在红框中的 Install this APK to this device 后输入 y。"></a><figcaption>图 5 · 在红框处输入 Y，确认安装。点击图片可看原图。</figcaption></figure>
+          <h3>3. 首次设备：按提示设置设备所有者</h3><p>新设备若出现 <code>Set XR App as Device Owner?</code>，确认属于本项目管理后输入 <kbd>Y</kbd>，再按回车。本次原教程中的设备已设置过，因此没有这条询问。</p></div>
+          <p class="tip">“Device Owner”就是设备所有者，用于本项目的设备管理。如果头环已经设置为本 XR App 的设备所有者，工具会跳过首次设置的确认步骤。</p>
+          <div class="callout"><strong>如果出现“卸载旧 App 并清除数据”的询问，输入 N。</strong><p>Windows 原脚本在签名不兼容时可能提示 <code>Uninstall the existing XR App, erase its data, and continue?</code>。此时停止并联系负责人，不要通过卸载解决。</p></div>
+        </section>
+
+        <section class="step" id="win-finish" aria-labelledby="win-finish-title">
+          <div class="step-heading"><span class="step-number">06</span><div><p class="step-kicker">完成检查</p><h2 id="win-finish-title">确认出现成功提示</h2></div></div>
+          <div class="success-panel"><span class="success-icon" aria-hidden="true">✓</span><div><p>命令窗口应出现</p><code>XR INIT SUCCESS</code><span>表示安装及设备所有者检查完成，应用启动命令已发送。</span></div></div>
+          <figure class="figure windows-terminal"><a href="assets/windows-real-05-success.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/windows-real-05-success.png" width="1095" height="380" alt="Windows 实际安装完成截图：红框标出 XR INIT SUCCESS，下方提示按任意键关闭窗口。"></a><figcaption>图 6 · 红框中的 XR INIT SUCCESS 表示安装与设备所有者检查完成。点击图片可看原图。</figcaption></figure>
+          <ol class="actions"><li>查看头环画面，确认 <strong>XR 采集 App 已打开</strong>。</li><li>返回电脑，按窗口提示<strong>按任意键关闭</strong>。</li><li>随后按项目要求完成配网、绑定、登录、录制和上传验证。</li></ol>
+          <p class="tip">USB 安装本身不需要联网；业务使用还需要配套手机控制 App、正式账号和可访问服务器的 Wi-Fi。</p>
+        </section>
+
+        <section class="faq-section" id="win-faq" aria-labelledby="win-faq-title"><p class="eyebrow">卡住时看这里</p><h2 id="win-faq-title">常见问题</h2>
+          <details><summary>没有找到设备，或提示 No authorized ADB device？</summary><p>检查头环是否开机、USB 调试是否开启、头环画面是否有待确认的 USB 授权。换可传数据的线或 USB 接口再试。如果 Windows 仍无法识别，联系负责人确认厂商 USB / ADB 驱动。</p></details>
+          <details><summary>文件夹里有 START-INSTALL.bat，应该打开哪一个？</summary><p>本次 Windows 原教程红框指定的是 xr-init-device-owner.bat，请按第 3 步直接打开它。当前 Windows 包的 START-INSTALL.bat 仍检查旧 APK 文件名，可能提示文件缺失。</p></details>
+          <details><summary>看到窗口一闪而过，或者找不到 adb？</summary><p>确认已完整解压，脚本和 adb.exe 在同一个文件夹；不要只复制一个脚本出来运行，也不要在 ZIP 预览窗口中运行。仍失败时，将现象交给负责人处理。</p></details>
+          <details><summary>出现 XR INIT FAILED、签名冲突或版本更高？</summary><p>保留命令窗口并截图具体错误给负责人；如果询问卸载并清除数据，输入 N。失败不一定表示 APK 没有安装，不要自行清除数据或恢复出厂。</p></details>
+          <details><summary>设备所有者设置失败，或者已有其他管理程序？</summary><p>停止安装并联系负责人。首次设置会受到系统账户、工作资料和固件策略影响，不要自行恢复出厂或移除其他设备管理程序。</p></details>
+        </section>
+        <footer class="footer"><p>适用：用户提供的 Windows 工具包 · APK 20261016-170742 · App 1.1.0 / 262891027</p><details class="document-info"><summary>文档信息与验证范围</summary><p>文档：XR 头环 App Windows 安装图文指引 · 编号 XR-WIN-GUIDE-001 · 版本 1.2 · 日期 2026-10-16。编制：AI 辅助；人工评审与批准：待确认。</p><p>依据：用户提供的《头环XR安装教程 Windows》中的操作步骤、接线实拍和文件列表，以及当前 Windows 安装脚本。命令行图片使用用户原教程中的实际截图，保留原有红框标注。原教程中的成功截图不代表所有设备均已验收；本次未执行新的 Windows 安装或业务功能验收。</p><p>本页提供操作说明；安装工具 ZIP 请向负责人获取。</p></details><a class="back-top" href="#win-top">回到顶部 ↑</a></footer>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+(() => {
+  const panels = {mac: document.getElementById('guide-mac'), windows: document.getElementById('guide-windows')};
+  const tabs = {mac: document.getElementById('tab-mac'), windows: document.getElementById('tab-windows')};
+  let active = 'mac';
+  function targetId(platform, step) {
+    if (platform === 'windows' && step === 'allow') step = 'open';
+    if (platform === 'mac' && step === 'device') step = 'install';
+    if (step === 'top') return platform === 'windows' ? 'win-top' : 'top';
+    const id = (platform === 'windows' ? 'win-' : '') + step;
+    return document.getElementById(id) ? id : (platform === 'windows' ? 'win-top' : 'top');
+  }
+  function jump(id) {
+    requestAnimationFrame(() => {
+      const root = document.documentElement;
+      root.style.scrollBehavior = 'auto';
+      if (id === 'top' || id === 'win-top') window.scrollTo({top: 0, behavior: 'auto'});
+      else document.getElementById(id)?.scrollIntoView({block: 'start', behavior: 'auto'});
+      root.style.scrollBehavior = '';
+    });
+  }
+  function show(platform, step = 'top', writeHistory = false, scroll = true) {
+    active = platform;
+    for (const key of ['windows', 'mac']) {
+      panels[key].hidden = key !== platform;
+      tabs[key].setAttribute('aria-selected', String(key === platform));
+      tabs[key].tabIndex = key === platform ? 0 : -1;
+    }
+    document.getElementById('platform-label').textContent = platform === 'mac' ? 'Mac 版' : 'Windows 版';
+    document.title = (platform === 'mac' ? 'Mac' : 'Windows') + ' 安装头环 App · 图文操作指引';
+    document.getElementById('skip-guide').href = '#' + targetId(platform, 'prepare');
+    const id = targetId(platform, step);
+    if (writeHistory) {
+      const url = new URL(location.href);
+      url.searchParams.set('platform', platform);
+      url.hash = id === 'top' || id === 'win-top' ? '' : id;
+      history.pushState({platform}, '', url);
+    }
+    if (scroll) jump(id);
+  }
+  function sync() {
+    const hash = decodeURIComponent(location.hash.slice(1));
+    const platform = hash.startsWith('win-') || new URL(location.href).searchParams.get('platform') === 'windows' ? 'windows' : 'mac';
+    show(platform, hash.replace(/^win-/, '') || 'top', false, true);
+  }
+  for (const key of ['windows', 'mac']) {
+    tabs[key].addEventListener('click', () => { if (key !== active) show(key, 'top', true); });
+    tabs[key].addEventListener('keydown', event => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const next = event.key === 'Home' ? 'windows' : event.key === 'End' ? 'mac' : active === 'mac' ? 'windows' : 'mac';
+      show(next, 'top', true);
+      tabs[next].focus();
+    });
+  }
+  addEventListener('popstate', sync);
+  addEventListener('hashchange', sync);
+  sync();
+})();
+</script>
+</body></html>
