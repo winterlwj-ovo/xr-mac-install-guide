@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f7f8f5">
   <title>Mac 安装头环 App · 图文操作指引</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d302c'/%3E%3Ctext x='32' y='41' text-anchor='middle' fill='white' font-size='28' font-family='monospace'%3EXR%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=1.2">
 </head>
 <body>
   <a class="skip" href="#prepare">跳到安装步骤</a>
@@ -83,19 +83,14 @@
         <section class="step" id="install" aria-labelledby="install-title">
           <div class="step-heading"><span class="step-number">05</span><div><p class="step-kicker">终端操作</p><h2 id="install-title">输入编号，再按提示确认</h2></div></div>
           <p>终端会显示可用设备。<strong>每次输入后，都按一下键盘上的回车键（Enter / Return）。</strong></p>
-          <div class="terminal" role="img" aria-label="终端交互示意，非真实安装记录：输入目标头环编号 1，之后依次输入 Y 确认设备、安装和首次设备所有者设置。"><div class="terminal-bar"><span></span><span></span><span></span><small>操作示意 · 非真实安装记录</small></div><pre><span class="terminal-muted">[1] 你的头环序列号</span>
-
-输入目标头环编号：<em>1</em>   <span class="terminal-muted">← 按回车</span>
-确认使用这台头环？[Y/N]：<em>Y</em>
-确认覆盖安装此 APK？[Y/N]：<em>Y</em>
-将 XR App 设置为设备所有者？[Y/N]：<em>Y</em></pre></div>
-          <ol class="actions"><li><strong>选设备：</strong>输入列表里目标头环前面的编号。只有一台时通常输入 <kbd>1</kbd>。</li><li><strong>确认设备：</strong>核对序列号、厂家和型号后，输入 <kbd>Y</kbd>。</li><li><strong>确认安装：</strong>确认使用本次正式包后，输入 <kbd>Y</kbd>，等待安装。</li><li><strong>首次初始化：</strong>若提示设置设备所有者，确认是本项目管理的头环后输入 <kbd>Y</kbd>。已设置过的会跳过。</li></ol>
+          <p class="muted">下面 4 张终端图按实际脚本提示制作，均为<strong>模拟示例，不是实机安装截图</strong>。点击图片可看大图。</p><div class="terminal-walkthrough"><h3>1. 选择目标头环</h3><p>输入目标头环前面的编号，然后按回车。只有一台时通常输入 <kbd>1</kbd>；图中的 DEMO-XR-001 是示例序列号。</p><figure class="figure"><a href="assets/mac-terminal-01-device.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/mac-terminal-01-device.png" width="980" height="451" alt="Mac 终端操作示意：在输入目标头环编号处输入 1 并按回车。"></a><figcaption>图 4 · 选择设备的终端操作示意。红框内是需要输入的位置。点击可看大图。</figcaption></figure><h3>2. 确认设备，再确认安装</h3><p>核对序列号、厂家和型号，输入 <kbd>Y</kbd> 并回车；出现覆盖安装确认时，再输入 <kbd>Y</kbd> 并回车。</p><figure class="figure"><a href="assets/mac-terminal-02-install.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/mac-terminal-02-install.png" width="980" height="600" alt="Mac 终端操作示意：确认使用这台头环时输入 Y，确认覆盖安装 APK 时再次输入 Y。"></a><figcaption>图 5 · 两次确认示意：先确认头环，再确认安装。点击可看大图。</figcaption></figure><h3>3. 首次设置设备所有者</h3><p>如果出现这条询问，确认是本项目管理的头环后输入 <kbd>Y</kbd> 并回车。已设置过的设备会跳过。</p><figure class="figure"><a href="assets/mac-terminal-03-owner.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/mac-terminal-03-owner.png" width="980" height="452" alt="Mac 终端操作示意：将 XR App 设置为设备所有者时输入 Y；已设置过的设备自动跳过。"></a><figcaption>图 6 · 首次设置设备所有者的终端操作示意。点击可看大图。</figcaption></figure></div>
           <p class="tip">“设备所有者”是本项目设备管理所需的初始化设置。第一次通常需要确认；后续同签名覆盖升级会保留这一身份。</p>
         </section>
 
         <section class="step" id="finish" aria-labelledby="finish-title">
           <div class="step-heading"><span class="step-number">06</span><div><p class="step-kicker">完成检查</p><h2 id="finish-title">看到成功提示，再看一眼头环</h2></div></div>
           <div class="success-panel"><span class="success-icon" aria-hidden="true">✓</span><div><p>终端应出现</p><code>XR INIT SUCCESS</code><span>APK 安装和设备所有者核验完成，启动命令已发送。</span></div></div>
+          <figure class="figure"><a href="assets/mac-terminal-04-success.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/mac-terminal-04-success.png" width="980" height="545" alt="Mac 终端完成提示示意：XR INIT SUCCESS，检查头环应用启动后按回车关闭窗口。"></a><figcaption>图 7 · 安装完成后的终端提示示意。以 XR INIT SUCCESS 为完成标志，再检查实际头环画面；点击可看大图。</figcaption></figure>
           <ol class="actions"><li>看一下头环画面，确认 <strong>XR 采集 App 已打开</strong>。</li><li>回到 Mac，按回车结束安装窗口。</li><li>随后按项目要求进行配网、绑定、登录、录制与上传验证。</li></ol>
           <p class="tip">USB 安装本身不需要联网。后续业务使用还需要配套手机控制 App、正式账号和可访问服务器的 Wi-Fi。</p>
         </section>
@@ -108,7 +103,7 @@
           <details><summary>提示签名不兼容、版本更高或已有其他设备所有者？</summary><p>停止操作，将错误信息交给负责人。本工具遇到这些情况会停止，不会自动卸载旧应用或强制降级。</p></details>
           <details><summary>头环没有“开发者选项”或设置设备所有者失败？</summary><p>不同固件的开放方式可能不同，请联系设备负责人；首次设置设备所有者还会受到系统账户、工作资料和固件策略限制。不要自行恢复出厂。</p></details>
         </section>
-        <footer class="footer"><p>适用：XR-Installer-Mac-1.1.0-prod-20261016-170742 · App 1.1.0 / 262891027</p><p>安全设置步骤与图 2、图 3 来源：<a href="https://support.apple.com/zh-cn/102445" target="_blank" rel="noopener">Apple 官方：在 Mac 上安全地打开 App</a>。不同 macOS 版本的布局、按钮及文字可能略有不同。</p><details class="document-info"><summary>文档信息与验证范围</summary><p>文档：XR 头环 App Mac 安装图文指引 · 编号 XR-MAC-GUIDE-001 · 版本 1.1 · 日期 2026-10-16。编制：AI 辅助；人工评审与批准：待确认。依据：当前安装脚本、安装包版本信息、用户提供的 Finder 截图、Windows 原教程中的接线照片及 Apple 官方帮助。</p><p>Mac 安装工具已完成本机预检与 29 项模拟检查；未执行真实头环安装、业务功能验收或在本机复现安全拦截。接线照片来自用户提供的 Windows 教程；图 1 为用户提供的实际文件截图，图 2、3 为 Apple 官方界面示例，终端内容为操作示意。</p><p>本页提供操作说明；安装工具 ZIP 请向负责人获取。</p></details><a class="back-top" href="#top">回到顶部 ↑</a></footer>
+        <footer class="footer"><p>适用：XR-Installer-Mac-1.1.0-prod-20261016-170742 · App 1.1.0 / 262891027</p><p>安全设置步骤与图 2、图 3 来源：<a href="https://support.apple.com/zh-cn/102445" target="_blank" rel="noopener">Apple 官方：在 Mac 上安全地打开 App</a>。不同 macOS 版本的布局、按钮及文字可能略有不同。</p><details class="document-info"><summary>文档信息与验证范围</summary><p>文档：XR 头环 App Mac 安装图文指引 · 编号 XR-MAC-GUIDE-001 · 版本 1.2 · 日期 2026-10-16。编制：AI 辅助；人工评审与批准：待确认。依据：当前安装脚本、安装包版本信息、用户提供的 Finder 截图、Windows 原教程中的接线照片及 Apple 官方帮助。</p><p>Mac 安装工具已完成本机预检与 29 项模拟检查；未执行真实头环安装、业务功能验收或在本机复现安全拦截。接线照片来自用户提供的 Windows 教程；图 1 为用户提供的实际文件截图，图 2、3 为 Apple 官方界面示例，终端图为按实际脚本提示制作的模拟示例，不是实机安装截图。</p><p>本页提供操作说明；安装工具 ZIP 请向负责人获取。</p></details><a class="back-top" href="#top">回到顶部 ↑</a></footer>
       </div>
     </div>
   </main>
