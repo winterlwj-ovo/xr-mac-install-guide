@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="面向首次操作的 XR 头环 App Mac 安装指引：解压、USB 调试、双击安装、macOS 隐私与安全性放行及初始化。">
+  <meta name="theme-color" content="#f7f8f5">
+  <title>Mac 安装头环 App · 图文操作指引</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d302c'/%3E%3Ctext x='32' y='41' text-anchor='middle' fill='white' font-size='28' font-family='monospace'%3EXR%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#prepare">跳到安装步骤</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="回到页首"><span class="brand-mark">XR</span><span>头环使用指引</span></a>
+    <span class="edition">Mac 版 <span class="dot"></span> 2026.10.16</span>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">安装操作 / MAC</p>
+      <h1 id="page-title">用 Mac，<br>给头环安装 App。</h1>
+      <p class="intro">第一次操作也可以跟着做。准备好头环和数据线，<br class="desktop-only">按下面 6 步完成安装与初始化。</p>
+      <div class="hero-actions"><a class="button primary" href="#prepare">从第一步开始 <span aria-hidden="true">↓</span></a><a class="button text-button" href="#allow">被 Mac 拦截了？看这里 <span aria-hidden="true">↗</span></a></div>
+      <div class="version-strip"><span>App <strong>1.1.0</strong></span><span>构建号 <strong>262891027</strong></span><span>安装包日期 <strong>2026-10-16</strong></span></div>
+      <div class="hero-note"><span class="small-icon" aria-hidden="true">i</span><p>App 安装到<strong>头环</strong>。Mac 负责运行安装工具；安装和 init 初始化会一起完成。</p></div>
+    </section>
+
+    <div class="guide-layout">
+      <aside class="contents" aria-label="步骤导航">
+        <p class="nav-label">跟着这 6 步操作</p>
+        <nav>
+          <a href="#prepare"><span>01</span>准备与解压</a>
+          <a href="#connect"><span>02</span>连接头环</a>
+          <a href="#open"><span>03</span>双击安装入口</a>
+          <a href="#allow" class="attention-link"><span>04</span>允许 Mac 打开</a>
+          <a href="#install"><span>05</span>按提示安装</a>
+          <a href="#finish"><span>06</span>确认完成</a>
+        </nav>
+        <a class="faq-link" href="#faq">遇到问题？<span aria-hidden="true">↗</span></a>
+      </aside>
+
+      <div class="steps">
+        <section class="step" id="prepare" aria-labelledby="prepare-title">
+          <div class="step-heading"><span class="step-number">01</span><div><p class="step-kicker">开始前</p><h2 id="prepare-title">先解压，文件放在一起</h2></div></div>
+          <p>向负责人取得 <strong>Mac 版安装工具 ZIP</strong>。在“访达”中找到它，双击 ZIP 解压，再打开解压后的文件夹。</p>
+          <div class="file-label"><span class="file-badge">ZIP</span><code>XR-Installer-Mac-1.1.0-prod-20261016-170742.zip</code></div>
+          <p class="muted">如果你已经看到下方截图那样的文件列表，就已经解压，可以继续下一步。</p>
+          <div class="prep-list"><div><span class="checkmark">✓</span><p>一台 Mac<br><small>工具包已自带 ADB</small></p></div><div><span class="checkmark">✓</span><p>已开机的头环<br><small>建议先保证电量充足</small></p></div><div><span class="checkmark">✓</span><p>可传输数据的 USB 线<br><small>仅充电的数据线无法安装</small></p></div></div>
+          <p class="tip">保留文件夹内全部文件。只双击后面指定的安装入口，<strong>不用单独打开 APK、adb 或 init 文件</strong>。</p>
+        </section>
+
+        <section class="step" id="connect" aria-labelledby="connect-title">
+          <div class="step-heading"><span class="step-number">02</span><div><p class="step-kicker">连接设备</p><h2 id="connect-title">用 USB 线连接 Mac 和头环</h2></div></div>
+          <ol class="actions"><li>在头环上打开<strong>开发者选项 → USB 调试</strong>。不同固件的入口可能不同，找不到时联系设备负责人。</li><li>用 USB 数据线连接 Mac，<strong>一次只连接一台待安装头环</strong>。</li><li>查看头环画面。如果出现“允许 USB 调试”，选择<strong>允许 / 确定</strong>。</li></ol>
+          <div class="connection" role="img" aria-label="连接示意：Mac 通过 USB 数据线连接到已开机并启用 USB 调试的头环"><div class="laptop-shape"><div></div><span>Mac</span></div><div class="cable"><span>USB 数据线</span></div><div class="headset-shape"><div><i></i><i></i></div><span>头环</span></div></div>
+          <p class="tip">授权弹窗有时会在运行安装工具后才出现。若工具提示没有已授权设备，先在头环上允许，再重新打开安装入口。</p>
+        </section>
+
+        <section class="step" id="open" aria-labelledby="open-title">
+          <div class="step-heading"><span class="step-number">03</span><div><p class="step-kicker">打开工具</p><h2 id="open-title">双击这个文件</h2></div></div>
+          <div class="entry-name"><code>START-INSTALL.command</code><span>只需要打开它</span></div>
+          <p>在解压后的文件夹里找到它，<strong>双击打开</strong>。正常情况下，会出现一个显示文字的“终端”窗口。</p>
+          <figure class="figure finder-figure"><a href="assets/finder-start-install.png" target="_blank" rel="noopener" aria-label="打开安装入口截图原图"><img src="assets/finder-start-install.png" width="2624" height="1002" alt="访达文件列表。红框圈出了 START-INSTALL.command，旁边标注双击执行此文件。"></a><figcaption>图 1 · 双击红框中的 START-INSTALL.command。点击图片可看大图。</figcaption></figure>
+          <div class="split-note"><div><strong>不用再执行 init</strong><p>这个入口会自动运行 <code>xr-init-device-owner.sh</code>。</p></div><div><strong>如果 Mac 弹出拦截提示</strong><p>按下一步在系统设置中允许打开。</p></div></div>
+        </section>
+
+        <section class="step allow-step" id="allow" aria-labelledby="allow-title">
+          <div class="step-heading"><span class="step-number">04</span><div><p class="step-kicker">第一次使用时可能遇到</p><h2 id="allow-title">被拦截？到系统设置里允许</h2></div></div>
+          <p>如果显示“无法验证开发者”或“Apple 无法检查是否包含恶意软件”，先核对这是负责人提供的工具包，再按下面的顺序操作。<strong>没有弹窗、工具能正常运行时，直接跳到第 5 步。</strong></p>
+          <div class="route"><span> 苹果菜单</span><b>›</b><span>系统设置</span><b>›</b><span>隐私与安全性</span><b>›</b><strong>仍要打开</strong></div>
+          <div class="permission-grid">
+            <div class="permission-copy">
+              <ol class="permission-actions"><li><span>A</span><div><h3>先关闭拦截提示</h3><p>点“完成”或“取消”，<strong>不要把工具移到废纸篓</strong>。</p></div></li><li><span>B</span><div><h3>打开“系统设置”</h3><p>点击屏幕左上角的 <strong> 苹果菜单 → 系统设置</strong>。</p></div></li><li><span>C</span><div><h3>找到“仍要打开”</h3><p>点左侧<strong>隐私与安全性</strong>，右侧向下滚动到“安全性”，找到刚才被阻止的文件，点<strong>仍要打开</strong>。</p></div></li><li><span>D</span><div><h3>确认打开</h3><p>如果系统要求验证，使用 Mac 登录密码或 Touch ID；再次出现确认窗口时，点<strong>打开</strong>。</p></div></li></ol>
+            </div>
+            <figure class="figure apple-warning"><img loading="lazy" src="https://cdsassets.apple.com/live/7WUAS350/images/macos/sequoia/locale/zh-cn/macos-sequoia-app-not-opened-could-not-verify-free-from-malware.png" width="520" height="436" alt="Apple 官方警告示例：无法验证示例 App 是否包含恶意软件，下面有移到废纸篓和完成按钮。"><figcaption>图 2 · Apple 官方弹窗示例。你的弹窗可能显示 START-INSTALL.command 或 adb。</figcaption></figure>
+          </div>
+          <figure class="figure settings-figure"><a href="https://cdsassets.apple.com/live/7WUAS350/images/macos/sequoia/locale/zh-cn/macos-sequoia-system-settings-privacy-and-security-open-app-anyway.png" target="_blank" rel="noopener" aria-label="打开 Apple 官方安全设置截图原图"><img loading="lazy" src="https://cdsassets.apple.com/live/7WUAS350/images/macos/sequoia/locale/zh-cn/macos-sequoia-system-settings-privacy-and-security-open-app-anyway.png" width="1430" height="1196" alt="Apple 官方 macOS 设置截图：选择隐私与安全性，在安全性区域点击红框中的仍要打开。"></a><figcaption>图 3 · 在“隐私与安全性”下找到红框中的“仍要打开”。Apple 官方示例使用“示例 App”作为名称；请核对你这里显示的是本工具文件。点击图片可看大图。</figcaption></figure>
+          <div class="callout"><strong>如果接着又拦截了 adb，再允许一次。</strong><p>安装脚本和 adb 是两个文件，可能分别弹窗。对本工具包里的 <code>adb</code> 重复上面的放行步骤。若原终端已显示失败，关闭失败窗口，再双击 <code>START-INSTALL.command</code> 重新运行。</p></div>
+          <p class="security-footnote">这里仅允许本次工具运行，无需关闭系统安全保护。如果提示文件“已损坏”“将损坏你的电脑”，或公司电脑不允许修改设置，请停止并联系负责人。</p>
+        </section>
+
+        <section class="step" id="install" aria-labelledby="install-title">
+          <div class="step-heading"><span class="step-number">05</span><div><p class="step-kicker">终端操作</p><h2 id="install-title">输入编号，再按提示确认</h2></div></div>
+          <p>终端会显示可用设备。<strong>每次输入后，都按一下键盘上的回车键（Enter / Return）。</strong></p>
+          <div class="terminal" role="img" aria-label="终端交互示意，非真实安装记录：输入目标头环编号 1，之后依次输入 Y 确认设备、安装和首次设备所有者设置。"><div class="terminal-bar"><span></span><span></span><span></span><small>操作示意 · 非真实安装记录</small></div><pre><span class="terminal-muted">[1] 你的头环序列号</span>
+
+输入目标头环编号：<em>1</em>   <span class="terminal-muted">← 按回车</span>
+确认使用这台头环？[Y/N]：<em>Y</em>
+确认覆盖安装此 APK？[Y/N]：<em>Y</em>
+将 XR App 设置为设备所有者？[Y/N]：<em>Y</em></pre></div>
+          <ol class="actions"><li><strong>选设备：</strong>输入列表里目标头环前面的编号。只有一台时通常输入 <kbd>1</kbd>。</li><li><strong>确认设备：</strong>核对序列号、厂家和型号后，输入 <kbd>Y</kbd>。</li><li><strong>确认安装：</strong>确认使用本次正式包后，输入 <kbd>Y</kbd>，等待安装。</li><li><strong>首次初始化：</strong>若提示设置设备所有者，确认是本项目管理的头环后输入 <kbd>Y</kbd>。已设置过的会跳过。</li></ol>
+          <p class="tip">“设备所有者”是本项目设备管理所需的初始化设置。第一次通常需要确认；后续同签名覆盖升级会保留这一身份。</p>
+        </section>
+
+        <section class="step" id="finish" aria-labelledby="finish-title">
+          <div class="step-heading"><span class="step-number">06</span><div><p class="step-kicker">完成检查</p><h2 id="finish-title">看到成功提示，再看一眼头环</h2></div></div>
+          <div class="success-panel"><span class="success-icon" aria-hidden="true">✓</span><div><p>终端应出现</p><code>XR INIT SUCCESS</code><span>APK 安装和设备所有者核验完成，启动命令已发送。</span></div></div>
+          <ol class="actions"><li>看一下头环画面，确认 <strong>XR 采集 App 已打开</strong>。</li><li>回到 Mac，按回车结束安装窗口。</li><li>随后按项目要求进行配网、绑定、登录、录制与上传验证。</li></ol>
+          <p class="tip">USB 安装本身不需要联网。后续业务使用还需要配套手机控制 App、正式账号和可访问服务器的 Wi-Fi。</p>
+        </section>
+
+        <section class="faq-section" id="faq" aria-labelledby="faq-title"><p class="eyebrow">卡住时看这里</p><h2 id="faq-title">常见问题</h2>
+          <details><summary>“仍要打开”找不到在哪里？</summary><p>先重新双击一次安装入口，让系统产生刚才那条拦截记录，再打开“系统设置 → 隐私与安全性”，向下滚动查看“安全性”区域。如果工具已正常运行，就不需要放行；如果这是公司管控的 Mac，请联系 IT 或负责人。</p></details>
+          <details><summary>提示“没有已授权设备”，怎么办？</summary><p>查看头环是否有 USB 调试授权弹窗，点允许；确认 USB 调试已开启，数据线能传数据，然后重新运行入口。可换一个 USB 接口或数据线再试。</p></details>
+          <details><summary>要不要再双击 xr-init-device-owner.sh？</summary><p>不用。START-INSTALL.command 会自动调用 init 脚本，安装与初始化在同一次流程里完成。</p></details>
+          <details><summary>出现 XR INIT FAILED，怎么办？</summary><p>先保留终端窗口，截图最后的具体错误给负责人。失败可能发生在 APK 已安装之后，不代表已自动回滚。先不要卸载旧 App、清除数据或恢复出厂。日志位于 Mac 的 ~/Library/Logs/XR-Installer/；需要时由负责人协助取出。</p></details>
+          <details><summary>提示签名不兼容、版本更高或已有其他设备所有者？</summary><p>停止操作，将错误信息交给负责人。本工具遇到这些情况会停止，不会自动卸载旧应用或强制降级。</p></details>
+          <details><summary>头环没有“开发者选项”或设置设备所有者失败？</summary><p>不同固件的开放方式可能不同，请联系设备负责人；首次设置设备所有者还会受到系统账户、工作资料和固件策略限制。不要自行恢复出厂。</p></details>
+        </section>
+        <footer class="footer"><p>适用：XR-Installer-Mac-1.1.0-prod-20261016-170742 · App 1.1.0 / 262891027</p><p>安全设置步骤与图 2、图 3 来源：<a href="https://support.apple.com/zh-cn/102445" target="_blank" rel="noopener">Apple 官方：在 Mac 上安全地打开 App</a>。不同 macOS 版本的布局、按钮及文字可能略有不同。</p><details class="document-info"><summary>文档信息与验证范围</summary><p>文档：XR 头环 App Mac 安装图文指引 · 编号 XR-MAC-GUIDE-001 · 版本 1.0 · 日期 2026-10-16。编制：AI 辅助；人工评审与批准：待确认。依据：当前安装脚本、安装包版本信息、用户提供的 Finder 截图及 Apple 官方帮助。</p><p>安装工具已完成本机预检与 29 项模拟检查；未执行真实头环安装、业务功能验收或在本机复现安全拦截。图 1 为用户提供的实际文件截图，图 2、3 为 Apple 官方界面示例，终端内容为操作示意。</p><p>本页提供操作说明；安装工具 ZIP 请向负责人获取。</p></details><a class="back-top" href="#top">回到顶部 ↑</a></footer>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
